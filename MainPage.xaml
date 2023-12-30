@@ -6,14 +6,16 @@
              x:Class="tictactroll.MainPage">
     <ContentPage.Resources>
         <layouts:FlexBasis x:Key="case_basis">33%</layouts:FlexBasis>
+        <Color x:Key="couleurDesBordures">Green</Color>
+        <Color x:Key="couleurDesCases">Black</Color>
         <converters:ValeurDeCaseAImageConverter x:Key="convertisseurDeValeurAImage"/>
     </ContentPage.Resources>
 
    <FlexLayout Wrap="Wrap"
-               BackgroundColor="Black">
+               BackgroundColor="{StaticResource couleurDesBordures}">
         <Frame FlexLayout.Basis="{StaticResource case_basis}"
-               BackgroundColor="White"
-               BorderColor="Black">
+               BackgroundColor="{StaticResource couleurDesCases}"
+               BorderColor="{StaticResource couleurDesBordures}">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="1"
                                       Command="{Binding PremiereCaseTouchee}"/>
@@ -26,18 +28,51 @@
          </Frame>
        
         <Frame FlexLayout.Basis="{StaticResource case_basis}"
-                 BorderColor="Black"
-                 BackgroundColor="White"/> 
+                 BorderColor="{StaticResource couleurDesBordures}"
+                 BackgroundColor="{StaticResource couleurDesCases}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                      Command="{Binding DeuxiemeCaseTouchee}"/>
+            </Frame.GestureRecognizers>
+
+            <Image VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Source="{Binding DeuxiemeCaseValeur, Converter={StaticResource convertisseurDeValeurAImage}}"
+                    Aspect="AspectFit"/>
+        </Frame>
         <Frame FlexLayout.Basis="{StaticResource case_basis}"
-               BorderColor="Black"
-                 BackgroundColor="White"/>
+               BorderColor="{StaticResource couleurDesBordures}"
+               BackgroundColor="{StaticResource couleurDesCases}">
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer NumberOfTapsRequired="1"
+                                  Command="{Binding TroisiemeCaseTouchee}"/>
+        </Frame.GestureRecognizers>
+
+        <Image VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"
+               Source="{Binding TroisiemeCaseValeur, Converter={StaticResource convertisseurDeValeurAImage}}"
+               Aspect="AspectFit"/>
+
+        </Frame>
         <Frame FlexLayout.Basis="{StaticResource case_basis}"
-               BorderColor="Black"
-                 BackgroundColor="White"/>
+               BorderColor="{StaticResource couleurDesBordures}"
+               BackgroundColor="{StaticResource couleurDesCases}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                      Command="{Binding QuatriemeCaseTouchee}"/>
+            </Frame.GestureRecognizers>
+
+            <Image VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"
+                   Source="{Binding QuatriemeCaseValeur, Converter={StaticResource convertisseurDeValeurAImage}}"
+                   Aspect="AspectFit"/>
+       
+       </Frame>
+       
         <Frame FlexLayout.Basis="{StaticResource case_basis}"
-               BorderColor="Black"
-                 BackgroundColor="White">
-               <Frame.GestureRecognizers>
+               BorderColor="{StaticResource couleurDesBordures}"
+               BackgroundColor="{StaticResource couleurDesCases}">
+            <Frame.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="1"
                                       Command="{Binding CinquiemeCaseTouchee}"/>
             </Frame.GestureRecognizers>
@@ -50,18 +85,61 @@
         </Frame>
                  
         <Frame FlexLayout.Basis="{StaticResource case_basis}"
-               BorderColor="Black"
-                 BackgroundColor="White"/>
+               BorderColor="{StaticResource couleurDesBordures}"
+               BackgroundColor="{StaticResource couleurDesCases}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                      Command="{Binding SixiemeCaseTouchee}"/>
+            </Frame.GestureRecognizers>
+
+            <Image VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"
+                   Source="{Binding SixiemeCaseValeur, Converter={StaticResource convertisseurDeValeurAImage}}"
+                   Aspect="AspectFit"/>
+        </Frame>
+       
         <Frame FlexLayout.Basis="{StaticResource case_basis}"
-               BorderColor="Black"
-                 BackgroundColor="White"/>
+               BorderColor="{StaticResource couleurDesBordures}"
+               BackgroundColor="{StaticResource couleurDesCases}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                      Command="{Binding SeptiemeCaseTouchee}"/>
+            </Frame.GestureRecognizers>
+
+            <Image VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"
+                   Source="{Binding SeptiemeCaseValeur, Converter={StaticResource convertisseurDeValeurAImage}}"
+                   Aspect="AspectFit"/>
+        </Frame>
+       
         <Frame FlexLayout.Basis="{StaticResource case_basis}"
-               BorderColor="Black"
-                 BackgroundColor="White"/>
+               BorderColor="{StaticResource couleurDesBordures}"
+                 BackgroundColor="Black">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                      Command="{Binding HuitiemeCaseTouchee}"/>
+            </Frame.GestureRecognizers>
+
+            <Image VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"
+                   Source="{Binding HuitiemeCaseValeur, Converter={StaticResource convertisseurDeValeurAImage}}"
+                   Aspect="AspectFit"/>
+        </Frame>
+       
         <Frame FlexLayout.Basis="{StaticResource case_basis}"
-               BorderColor="Black"
-                 BackgroundColor="White"/>
-   </FlexLayout>
+               BorderColor="{StaticResource couleurDesBordures}"
+               BackgroundColor="{StaticResource couleurDesCases}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                      Command="{Binding NeuviemeCaseTouchee}"/>
+            </Frame.GestureRecognizers>
+
+            <Image VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"
+                   Source="{Binding NeuviemeCaseValeur, Converter={StaticResource convertisseurDeValeurAImage}}"
+                   Aspect="AspectFit"/>
+        </Frame>
+    </FlexLayout>
 
 </ContentPage>
 
