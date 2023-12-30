@@ -17,20 +17,17 @@ namespace tictactroll
 
         [ObservableProperty]
         ValeursPossible _premiereCaseValeur = ValeursPossible.Vide;
-
+         
         [ObservableProperty]
         ICommand _cinquiemeCaseTouchee;
 
         [ObservableProperty]
         ValeursPossible _cinquiemeCaseValeur = ValeursPossible.Vide;
-
         public MainPageViewModel()
         {
             _premiereCaseTouchee = new Command(SurPremiereCaseTouchee);
             _cinquiemeCaseTouchee = new Command(SurCinquiemeCaseTouchee);
-        }
-        
-        
+        }        
         private void SurPremiereCaseTouchee(object obj)
         {
 			if (PremiereCaseValeur is ValeursPossible.Vide)
@@ -49,7 +46,6 @@ namespace tictactroll
 				return;
             }
         }
-
         private void SurCinquiemeCaseTouchee(object obj)
         {
             if (CinquiemeCaseValeur is ValeursPossible.Vide)
